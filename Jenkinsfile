@@ -4,7 +4,7 @@ pipeline {
    stages {
       stage('拉取代码') {
          steps {
-            checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'b85634f8-4e1a-423d-8269-cb65a506900b', url: 'https://github.com/993034494/web_demo.git']]])
+            checkout([$class: 'GitSCM', branches: [[name: '*/${branch}']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'b85634f8-4e1a-423d-8269-cb65a506900b', url: 'https://github.com/993034494/web_demo.git']]])
          }
       }
       stage('编译打包') {
